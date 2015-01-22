@@ -29,7 +29,7 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => require(__DIR__ . '/restful.php'),
-        ]
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
