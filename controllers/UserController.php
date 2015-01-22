@@ -20,12 +20,26 @@ class UserController extends ActiveController
         return $actions;
     }
 
-    public function actionIndex($id)
+    public function actionIndex()
     {
         $modelClass = $this->modelClass;
-        $query = $modelClass::find()->where(['id' => [$id]]);
+        $query = $modelClass::find();
         return new ActiveDataProvider([
             'query' => $query,
         ]);
+    }
+
+    public function actionView($id)
+    {
+        return $this->findModel($id);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 }
