@@ -5,6 +5,4 @@ return [
     'GET,HEAD users/<id>' => 'user/view',
     'POST users' => 'user/create',
     'GET,HEAD users' => 'user/index',
-    'users/<id>' => 'user/options',
-    'users' => 'user/options',
 ];

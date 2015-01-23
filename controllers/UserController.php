@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use Yii;
 use yii\rest\ActiveController;
 use yii\data\ActiveDataProvider;
+
 
 class UserController extends ActiveController
 {
@@ -16,7 +18,8 @@ class UserController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['index']);
+        // 注销系统自带的实现方法
+        unset($actions['index'], $actions['update'], $actions['create'], $actions['delete'], $actions['view']);
         return $actions;
     }
 
@@ -29,6 +32,31 @@ class UserController extends ActiveController
         ]);
     }
 
+    public function actionCreate()
+    {
+        $model = new $this->modelClass();
+        $model->load(Yii::$app->getRequest()->getBodyParams(), '');
+        if (!$model->save()) {
+            return array_values($model->getFirstErrors())[0];
+        }
+        return $model;
+    }
+
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+        $model->load(Yii::$app->getRequest()->getBodyParams(), '');
+        if (!$model->save()) {
+            return array_values($model->getFirstErrors())[0];
+        }
+        return $model;
+    }
+
+    public function actionDelete($id)
+    {
+        return $this->findModel($id)->delete();
+    }
+
     public function actionView($id)
     {
         return $this->findModel($id);
@@ -36,7 +64,8 @@ class UserController extends ActiveController
 
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
+        $modelClass = $this->modelClass;
+        if (($model = $modelClass::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
