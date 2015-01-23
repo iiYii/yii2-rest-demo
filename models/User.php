@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\components\db\ActiveRecord;
 
 /**
  * This is the model class for table "user".
@@ -19,7 +20,7 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class User extends \yii\db\ActiveRecord
+class User extends ActiveRecord
 {
     /**
      * @inheritdoc
