@@ -96,14 +96,18 @@ RESTFUL 使用方法
 
 ### 主要修改如下几个文件
 
+```
   config/web.php
   controllers/UserController.php
+```
 
 效果截图
 --------------
 
 ### GET
 ![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114309.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114309.png)
+
+
 ![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114431.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114431.png)
 
 ### POST
