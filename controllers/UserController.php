@@ -5,7 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\rest\ActiveController;
 use yii\data\ActiveDataProvider;
-
+use yii\web\NotFoundHttpException;
 
 class UserController extends ActiveController
 {
@@ -71,4 +71,5 @@ class UserController extends ActiveController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }
