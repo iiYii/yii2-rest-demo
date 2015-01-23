@@ -87,3 +87,30 @@ return [
 **NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
 
 Also check and edit the other files in the `config/` directory to customize your application.
+
+RESTFUL 使用方法
+--------------
+
+在终端执行`php yii migrate`初始化数据库
+使用Chrome [POSTMAN插件](http://www.getpostman.com/)进行调试（下载请自配梯子）。
+
+### 主要修改如下几个文件
+
+  config/web.php
+  controllers/UserController.php
+
+效果截图
+--------------
+
+### GET
+![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114309.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114309.png)
+![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114431.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123114431.png)
+
+### POST
+![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161050.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161050.png)
+
+### PUT
+![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161819.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161819.png)
+
+### DELETE
+![https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161547.png](https://raw.githubusercontent.com/iiYii/yii2-rest-demo/master/temp-image/QQ20150123161547.png)
