@@ -11,7 +11,7 @@ use yii\filters\auth\QueryParamAuth;
 
 class UserController extends ActiveController
 {
-    public $modelClass = 'app\models\User';
+    public $modelClass = 'app\modules\v1\models\User';
     public $serializer = [
         'class' => 'yii\rest\Serializer',
         'collectionEnvelope' => 'items',
