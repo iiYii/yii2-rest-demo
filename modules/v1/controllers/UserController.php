@@ -20,12 +20,13 @@ class UserController extends ActiveController
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-        $behaviors['authenticator'] = [
-            'class' => CompositeAuth::className(),
-            'authMethods' => [
-                QueryParamAuth::className(),
-            ],
-        ];
+        // token 验证  请按需开启
+        // $behaviors['authenticator'] = [
+        //     'class' => CompositeAuth::className(),
+        //     'authMethods' => [
+        //         QueryParamAuth::className(),
+        //     ],
+        // ];
         return $behaviors;
     }
 
